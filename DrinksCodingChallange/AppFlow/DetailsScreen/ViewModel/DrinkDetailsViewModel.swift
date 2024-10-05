@@ -9,18 +9,25 @@ import Combine
 import Foundation
 
 final class DrinkDetailsViewModel: ObservableObject {
-    @Published var item: DrinkDetails?
+    @Published private var itemPublisher: DrinkDetails?
+    private var itemId: String
 
     private let getDrinkDetailsUseCase: GetDrinkDetailsUseCaseProtocol
     private var cancellables = Set<AnyCancellable>()
 
     init(getDrinkDetailsUseCase: GetDrinkDetailsUseCaseProtocol, itemId: String) {
         self.getDrinkDetailsUseCase = getDrinkDetailsUseCase
-        fetchDetail(for: itemId)
+        self.itemId = itemId
+    }
+}
+
+extension DrinkDetailsViewModel: DrinkDetailsViewModelProtocol {
+    var item: AnyPublisher<DrinkDetails?, Never> {
+        return $itemPublisher.eraseToAnyPublisher()
     }
 
-    private func fetchDetail(for id: String) {
-        getDrinkDetailsUseCase.get(drinkId: id)
+    func loadData() {
+        getDrinkDetailsUseCase.get(drinkId: itemId)
             .sink(
                 receiveCompletion: { completion in
                     if case .failure(let error) = completion {
@@ -28,7 +35,7 @@ final class DrinkDetailsViewModel: ObservableObject {
                     }
                 },
                 receiveValue: { [weak self] detailItem in
-                    self?.item = detailItem
+                    self?.itemPublisher = detailItem
                 }
             )
             .store(in: &cancellables)

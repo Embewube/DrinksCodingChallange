@@ -10,6 +10,7 @@
 		CF3F6F182CAD9D93001E2472 /* SearchDrinksCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6F172CAD9D93001E2472 /* SearchDrinksCoordinatorProtocol.swift */; };
 		CF3F6F1A2CB14450001E2472 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6F192CB14450001E2472 /* DesignTokens.swift */; };
 		CF3F6F1D2CB15571001E2472 /* GetDrinkDetailsUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6F1C2CB15571001E2472 /* GetDrinkDetailsUseCaseProtocol.swift */; };
+		CF3F6F1F2CB17859001E2472 /* DrinkDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6F1E2CB17859001E2472 /* DrinkDetailsViewModelProtocol.swift */; };
 		CF7F4D222CA803AF006AA147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7F4D212CA803AF006AA147 /* AppDelegate.swift */; };
 		CF7F4D2B2CA803B5006AA147 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF7F4D2A2CA803B5006AA147 /* Assets.xcassets */; };
 		CF7F4D2E2CA803B5006AA147 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7F4D2C2CA803B5006AA147 /* LaunchScreen.storyboard */; };
@@ -60,6 +61,7 @@
 		CF3F6F172CAD9D93001E2472 /* SearchDrinksCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDrinksCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		CF3F6F192CB14450001E2472 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
 		CF3F6F1C2CB15571001E2472 /* GetDrinkDetailsUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDrinkDetailsUseCaseProtocol.swift; sourceTree = "<group>"; };
+		CF3F6F1E2CB17859001E2472 /* DrinkDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
 		CF7F4D1E2CA803AF006AA147 /* DrinksCodingChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinksCodingChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7F4D212CA803AF006AA147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF7F4D2A2CA803B5006AA147 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				CF7F4D652CA9C034006AA147 /* DrinkDetailsViewModel.swift */,
+				CF3F6F1E2CB17859001E2472 /* DrinkDetailsViewModelProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				CF3F6F1D2CB15571001E2472 /* GetDrinkDetailsUseCaseProtocol.swift in Sources */,
 				CF8C1C042CAD19B6007FC708 /* GetSearchResultsUseCaseProtocol.swift in Sources */,
 				CF7F4D662CA9C034006AA147 /* DrinkDetailsViewModel.swift in Sources */,
+				CF3F6F1F2CB17859001E2472 /* DrinkDetailsViewModelProtocol.swift in Sources */,
 				CF7F4D872CA9DB57006AA147 /* DependencyProvider.swift in Sources */,
 				CF7F4D222CA803AF006AA147 /* AppDelegate.swift in Sources */,
 				CF7F4D9B2CAB3B0E006AA147 /* Coordinator.swift in Sources */,

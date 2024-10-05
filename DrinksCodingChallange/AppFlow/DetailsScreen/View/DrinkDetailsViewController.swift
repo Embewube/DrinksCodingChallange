@@ -11,10 +11,10 @@ import Kingfisher
 
 final class DrinkDetailsViewController: UIViewController {
     private let drinkDetailsView: DrinkDetailsView
-    private let viewModel: DrinkDetailsViewModel
+    private let viewModel: DrinkDetailsViewModelProtocol
     private var cancellables = Set<AnyCancellable>()
 
-    init(viewModel: DrinkDetailsViewModel, view: DrinkDetailsView) {
+    init(viewModel: DrinkDetailsViewModelProtocol, view: DrinkDetailsView) {
         self.viewModel = viewModel
         self.drinkDetailsView = view
         super.init(nibName: nil, bundle: nil)
@@ -31,10 +31,11 @@ final class DrinkDetailsViewController: UIViewController {
         drinkDetailsView.frame = view.bounds
 
         setupBindings()
+        viewModel.loadData()
     }
 
     private func setupBindings() {
-        viewModel.$item
+        viewModel.item
             .receive(on: DispatchQueue.main)
             .sink { [drinkDetailsView] item in
                 guard let item = item else { return }
